@@ -1,3 +1,6 @@
+import re
+
+
 class IRule(object):
 
     def __init__(self, category):
@@ -18,3 +21,13 @@ class KeywordRule(IRule):
             if description.lower().find(keyword.lower()) != -1:
                 return True
         return False
+
+
+class RegexRule(IRule):
+
+    def __init__(self, category, regex):
+        super(RegexRule, self).__init__(category)
+        self.regex = re.compile(regex)
+
+    def check_rule(self, description):
+        return self.regex.match(description)

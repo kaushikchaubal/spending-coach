@@ -1,4 +1,4 @@
-from services.rules import KeywordRule
+from services.rules import KeywordRule, RegexRule
 
 
 class Parser(object):
@@ -7,7 +7,30 @@ class Parser(object):
         self.reader = reader
         self.rules = [
             KeywordRule('ATM', ['CASH', 'WITHDRAW']),
-            KeywordRule('Food', ['Tesco', 'Sainsbury', 'Asda', 'Lidl'])
+            KeywordRule('Food', [
+                'Tesco', 'Sainsbury', 'Asda', 'Lidl', 'Waitrose',
+                'Morrisons', 'Ocado', 'Iceland', 'Marks&Spencer',
+                'Aldi']),
+            KeywordRule('Utilities', [
+                'H3G', 'Virgin', 'O2', 'giffgaff', 'vodafone',
+                'british gas', 'edf energy', 'talktalk', 'sky',
+                'thameswater']),
+            KeywordRule('Transport', [
+                'LUL', 'trainline', 'national rail']),
+            KeywordRule('Health', [
+                'superdrug', 'boots', 'bupa', 'gmc', 'axa', 'allianz',
+                'dentist', 'consult']),
+            KeywordRule('Leisure', [
+                'Spotify', 'Starbucks', 'Eat', 'Pret', 'Pure',
+                'Costa', 'Wagamama', 'jamie', 'KFC', 'mcdonalds',
+                'egg', 'fabric', 'koko', 'netflix', 'zing zing',
+                'chapel', 'pizza', 'amazon', 'paypal', 'holloway',
+                'tate', 'museum', 'royal academy']),
+            KeywordRule('Clothes', [
+                'Primark', 'Gap', 'Zara', 'Asos', 'H&M', 'monsoon']),
+            KeywordRule('Transfer', [
+                'trans']),
+            RegexRule('Check', r'^\d{6}$')
         ]
 
     def convert(self, data_frame):
