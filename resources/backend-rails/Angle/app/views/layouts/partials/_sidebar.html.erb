@@ -1,0 +1,391 @@
+<!-- START Sidebar (left)-->
+<div class="aside-inner">
+   <nav class="sidebar">
+      <!-- START sidebar nav-->
+      <ul class="nav">
+         <!-- START user info-->
+         <li class="has-user-block">
+            <div id="user-block" class="collapse">
+               <div class="item user-block">
+                  <!-- User picture-->
+                  <div class="user-block-picture">
+                     <div class="user-block-status">
+                        <img src="<%= image_path('angle/user/02.jpg') %>" alt="Avatar" width="60" height="60" class="img-thumbnail img-circle" />
+                        <div class="circle circle-success circle-lg"></div>
+                     </div>
+                  </div>
+                  <!-- Name and Job-->
+                  <div class="user-block-info">
+                     <span class="user-block-name">Hello, Mike</span>
+                     <span class="user-block-role">Designer</span>
+                  </div>
+               </div>
+            </div>
+         </li>
+         <!-- END user info-->
+         <!-- Iterates over all sidebar items-->
+         <li class="nav-heading">
+            <span>Main Navigation</span>
+         </li>
+         <li class="<%= 'active' if controller?('dashboard')%>">
+            <a href="#dashboard" title="Dashboard" data-toggle="collapse">
+               <em class="icon-speedometer"></em>
+               <div class="label label-success pull-right">3</div>
+               <span data-localize="sidebar.nav.DASHBOARD">Dashboard</span>
+            </a>
+            <ul id="dashboard" class="nav sidebar-subnav collapse">
+               <li class="sidebar-subnav-header">Dashboard</li>
+               <li class="<%= 'active' if controller?('dashboard') && action?('dashboard_v1') %>">
+                  <a href="/dashboard/dashboard_v1" title="Dashboard v1">
+                     <span>Dashboard v1</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('dashboard') && action?('dashboard_v2') %>">
+                  <a href="/dashboard/dashboard_v2" title="Dashboard v2">
+                     <span>Dashboard v2</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('dashboard') && action?('dashboard_v3') %>">
+                  <a href="/dashboard/dashboard_v3" title="Dashboard v3">
+                     <span>Dashboard v3</span>
+                  </a>
+               </li>
+            </ul>
+         </li>
+         <li class="<%= 'active' if controller?('widgets') && action?('index') %>">
+            <a href="/widgets" title="Widgets">
+               <em class="icon-grid"></em>
+               <div class="label label-success pull-right">30</div>
+               <span data-localize="sidebar.nav.WIDGETS">Widgets</span>
+            </a>
+         </li>
+         <li class="nav-heading">
+            <span>Components</span>
+         </li>
+         <li class="<%= 'active' if controller?('elements') %>">
+            <a href="#elements" title="Elements" data-toggle="collapse">
+               <div class="label label-success pull-right">new</div>
+               <em class="icon-chemistry"></em>
+               <span data-localize="sidebar.nav.element.ELEMENTS">Elements</span>
+            </a>
+            <ul id="elements" class="nav sidebar-subnav collapse">
+               <li class="sidebar-subnav-header">Elements</li>
+               <li class="<%= 'active' if controller?('elements') && action?('button') %>">
+                  <a href="/elements/button" title="Buttons">
+                     <span data-localize="sidebar.nav.element.BUTTON">Buttons</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('elements') && action?('notification') %>">
+                  <a href="/elements/notification" title="Notifications">
+                     <span data-localize="sidebar.nav.element.NOTIFICATION">Notifications</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('elements') && action?('carousel') %>">
+                  <a href="/elements/carousel" title="Carousel">
+                     <span data-localize="sidebar.nav.element.INTERACTION">Carousel</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('elements') && action?('spinner') %>">
+                  <a href="/elements/spinner" title="Spinners">
+                     <span data-localize="sidebar.nav.element.SPINNER">Spinners</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('elements') && action?('animation') %>">
+                  <a href="/elements/animation" title="Animations">
+                     <span data-localize="sidebar.nav.element.ANIMATION">Animations</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('elements') && action?('dropdown') %>">
+                  <a href="/elements/dropdown" title="Dropdown">
+                     <span data-localize="sidebar.nav.element.DROPDOWN">Dropdown</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('elements') && action?('nestable') %>">
+                  <a href="/elements/nestable" title="Nestable">
+                     <div class="label label-success pull-right">new</div>
+                     <span>Nestable</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('elements') && action?('sortable') %>">
+                  <a href="/elements/sortable" title="Sortable">
+                     <div class="label label-success pull-right">new</div>
+                     <span>Sortable</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('elements') && action?('panel') %>">
+                  <a href="/elements/panel" title="Panels">
+                     <span data-localize="sidebar.nav.element.PANEL">Panels</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('elements') && action?('portlet') %>">
+                  <a href="/elements/portlet" title="Portlets">
+                     <span data-localize="sidebar.nav.element.PORTLET">Portlets</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('elements') && action?('grid') %>">
+                  <a href="/elements/grid" title="Grid">
+                     <span data-localize="sidebar.nav.element.GRID">Grid</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('elements') && action?('gridmasonry') %>">
+                  <a href="/elements/gridmasonry" title="Grid Masonry">
+                     <span data-localize="sidebar.nav.element.GRID_MASONRY">Grid Masonry</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('elements') && action?('typography') %>">
+                  <a href="/elements/typography" title="Typography">
+                     <span data-localize="sidebar.nav.element.TYPO">Typography</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('elements') && action?('fonticons') %>">
+                  <a href="/elements/fonticons" title="Font Icons">
+                     <div class="label label-success pull-right">+400</div>
+                     <span data-localize="sidebar.nav.element.FONT_ICON">Font Icons</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('elements') && action?('weathericons') %>">
+                  <a href="/elements/weathericons" title="Weather Icons">
+                     <div class="label label-success pull-right">+100</div>
+                     <span data-localize="sidebar.nav.element.WEATHER_ICON">Weather Icons</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('elements') && action?('colors') %>">
+                  <a href="/elements/colors" title="Colors">
+                     <span data-localize="sidebar.nav.element.COLOR">Colors</span>
+                  </a>
+               </li>
+            </ul>
+         </li>
+         <li class="<%= 'active' if controller?('forms')%>">
+            <a href="#forms" title="Forms" data-toggle="collapse">
+               <em class="icon-note"></em>
+               <span data-localize="sidebar.nav.form.FORM">Forms</span>
+            </a>
+            <ul id="forms" class="nav sidebar-subnav collapse">
+               <li class="sidebar-subnav-header">Forms</li>
+               <li class="<%= 'active' if controller?('forms') && action?('standard') %>">
+                  <a href="/forms/standard" title="Standard">
+                     <span data-localize="sidebar.nav.form.STANDARD">Standard</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('forms') && action?('extended') %>">
+                  <a href="/forms/extended" title="Extended">
+                     <span data-localize="sidebar.nav.form.EXTENDED">Extended</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('forms') && action?('validation') %>">
+                  <a href="/forms/validation" title="Validation">
+                     <span data-localize="sidebar.nav.form.VALIDATION">Validation</span>
+                  </a>
+               </li>
+            </ul>
+         </li>
+         <li class="<%= 'active' if controller?('charts') %>">
+            <a href="#charts" title="Charts" data-toggle="collapse">
+               <em class="icon-graph"></em>
+               <span data-localize="sidebar.nav.chart.CHART">Charts</span>
+            </a>
+            <ul id="charts" class="nav sidebar-subnav collapse">
+               <li class="sidebar-subnav-header">Charts</li>
+               <li class="<%= 'active' if controller?('charts') && action?('flot') %>">
+                  <a href="/charts/flot" title="Flot">
+                     <span data-localize="sidebar.nav.chart.FLOT">Flot</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('charts') && action?('radial') %>">
+                  <a href="/charts/radial" title="Radial">
+                     <span data-localize="sidebar.nav.chart.RADIAL">Radial</span>
+                  </a>
+               </li>
+            </ul>
+         </li>
+         <li class="<%= 'active' if controller?('tables') %>">
+            <a href="#tables" title="Tables" data-toggle="collapse">
+               <em class="icon-grid"></em>
+               <div class="label label-success pull-right">new</div>
+               <span data-localize="sidebar.nav.table.TABLE">Tables</span>
+            </a>
+            <ul id="tables" class="nav sidebar-subnav collapse">
+               <li class="sidebar-subnav-header">Tables</li>
+               <li class="<%= 'active' if controller?('tables') && action?('standard') %>">
+                  <a href="/tables/standard" title="Standard">
+                     <span data-localize="sidebar.nav.table.STANDARD">Standard</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('tables') && action?('extended') %>">
+                  <a href="/tables/extended" title="Extended">
+                     <span data-localize="sidebar.nav.table.EXTENDED">Extended</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('tables') && action?('datatable') %>">
+                  <a href="/tables/datatable" title="DataTables">
+                     <span data-localize="sidebar.nav.table.DATATABLE">DataTables</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('tables') && action?('jqgrid') %>">
+                  <a href="/tables/jqgrid" title="jqGrid">
+                     <div class="label label-success pull-right">new</div>
+                     <span>jqGrid</span>
+                  </a>
+               </li>
+            </ul>
+         </li>
+         <li class="<%= 'active' if controller?('maps') %>">
+            <a href="#maps" title="Maps" data-toggle="collapse">
+               <em class="icon-map"></em>
+               <span data-localize="sidebar.nav.map.MAP">Maps</span>
+            </a>
+            <ul id="maps" class="nav sidebar-subnav collapse">
+               <li class="sidebar-subnav-header">Maps</li>
+               <li class="<%= 'active' if controller?('maps') && action?('google') %>">
+                  <a href="/maps/google" title="Google Maps">
+                     <span data-localize="sidebar.nav.map.GOOGLE">Google Maps</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('maps') && action?('vector') %>">
+                  <a href="/maps/vector" title="Vector Maps">
+                     <span data-localize="sidebar.nav.map.VECTOR">Vector Maps</span>
+                  </a>
+               </li>
+            </ul>
+         </li>
+         <li class="nav-heading">
+            <span>More</span>
+         </li>
+         <li class="<%= 'active' if controller?('pages')%>">
+            <a href="#pages" title="Pages" data-toggle="collapse">
+               <em class="icon-doc"></em>
+               <span data-localize="sidebar.nav.pages.PAGES">Pages</span>
+            </a>
+            <ul id="pages" class="nav sidebar-subnav collapse">
+               <li class="sidebar-subnav-header">Pages</li>
+               <li class="<%= 'active' if controller?('pages') && action?('login') %>">
+                  <a href="/pages/login" title="Login">
+                     <span data-localize="sidebar.nav.pages.LOGIN">Login</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('pages') && action?('register') %>">
+                  <a href="/pages/register" title="Sign up">
+                     <span data-localize="sidebar.nav.pages.REGISTER">Sign up</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('pages') && action?('recover') %>">
+                  <a href="/pages/recover" title="Recover Password">
+                     <span data-localize="sidebar.nav.pages.RECOVER">Recover Password</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('pages') && action?('lock') %>">
+                  <a href="/pages/lock" title="Lock">
+                     <span data-localize="sidebar.nav.pages.LOCK">Lock</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('pages') && action?('template') %>">
+                  <a href="/pages/template" title="Starter Template">
+                     <span data-localize="sidebar.nav.pages.STARTER">Starter Template</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('pages') && action?('notfound') %>">
+                  <a href="/pages/notfound" title="notfound">
+                     <span>404</span>
+                  </a>
+               </li>
+            </ul>
+         </li>
+         <li class="<%= 'active' if controller?('extras') %>">
+            <a href="#extras" title="Extras" data-toggle="collapse">
+               <em class="icon-cup"></em>
+               <span data-localize="sidebar.nav.extra.EXTRA">Extras</span>
+            </a>
+            <ul id="extras" class="nav sidebar-subnav collapse">
+               <li class="sidebar-subnav-header">Extras</li>
+               <li class="<%= 'active' if controller?('extras') && action?('mailbox') %>">
+                  <a href="/extras/mailbox" title="Mailbox">
+                     <span data-localize="sidebar.nav.extra.MAILBOX">Mailbox</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('extras') && action?('timeline') %>">
+                  <a href="/extras/timeline" title="Timeline">
+                     <span data-localize="sidebar.nav.extra.TIMELINE">Timeline</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('extras') && action?('calendar') %>">
+                  <a href="/extras/calendar" title="Calendar">
+                     <span data-localize="sidebar.nav.extra.CALENDAR">Calendar</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('extras') && action?('invoice') %>">
+                  <a href="/extras/invoice" title="Invoice">
+                     <span data-localize="sidebar.nav.extra.INVOICE">Invoice</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('extras') && action?('search') %>">
+                  <a href="/extras/search" title="Search">
+                     <span data-localize="sidebar.nav.extra.SEARCH">Search</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('extras') && action?('todo') %>">
+                  <a href="/extras/todo" title="Todo List">
+                     <span data-localize="sidebar.nav.extra.TODO">Todo List</span>
+                  </a>
+               </li>
+               <li class="<%= 'active' if controller?('extras') && action?('profile') %>">
+                  <a href="/extras/profile" title="Profile">
+                     <span data-localize="sidebar.nav.extra.PROFILE">Profile</span>
+                  </a>
+               </li>
+            </ul>
+         </li>
+         <li class="<%= 'active' if controller?('multilevel') %>">
+            <a href="#multilevel" title="Multilevel" data-toggle="collapse">
+               <em class="fa fa-folder-open-o"></em>
+               <span>Multilevel</span>
+            </a>
+            <ul id="multilevel" class="nav sidebar-subnav collapse">
+               <li class="sidebar-subnav-header">Multilevel</li>
+               <li class="<%= 'active' if controller?('multilevel') && action?('level1') %>">
+                  <a href="#level1" title="Level 1" data-toggle="collapse">
+                     <span>Level 1</span>
+                  </a>
+                  <ul id="level1" class="nav sidebar-subnav collapse">
+                     <li class="sidebar-subnav-header">Level 1</li>
+                     <li class="<%= 'active' if controller?('multilevel') && action?('level1') %>">
+                        <a href="/multilevel/level1" title="Level1 Item">
+                           <span>Level1 Item</span>
+                        </a>
+                     </li>
+                     <li class="<%= 'active' if controller?('multilevel') && action?('level3') %>">
+                        <a href="#level2" title="Level 2" data-toggle="collapse">
+                           <span>Level 2</span>
+                        </a>
+                        <ul id="level2" class="nav sidebar-subnav collapse">
+                           <li class="sidebar-subnav-header">Level 2</li>
+                           <li class="<%= 'active' if controller?('multilevel') && action?('level3') %>">
+                              <a href="#level3" title="Level 3" data-toggle="collapse">
+                                 <span>Level 3</span>
+                              </a>
+                              <ul id="level3" class="nav sidebar-subnav collapse">
+                                 <li class="sidebar-subnav-header">Level 3</li>
+                                 <li class="<%= 'active' if controller?('multilevel') && action?('level3') %>">
+                                    <a href="/multilevel/level3" title="Level3 Item">
+                                       <span>Level3 Item</span>
+                                    </a>
+                                 </li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+         </li>
+         <li class="<%= 'active' if controller?('documentation') && action?('index') %>">
+            <a href="/documentation" title="Documentation">
+               <em class="icon-graduation"></em>
+               <span data-localize="sidebar.nav.DOCUMENTATION">Documentation</span>
+            </a>
+         </li>
+      </ul>
+      <!-- END sidebar nav-->
+   </nav>
+</div>
+<!-- END Sidebar (left)-->
