@@ -5,16 +5,6 @@
 @import (less, reference) "../../../vendor/fontawesome/css/font-awesome.min.css";
 
 
-[ng\:cloak], 
-[ng-cloak], 
-[data-ng-cloak], 
-[x-ng-cloak], 
-.ng-cloak, 
-.x-ng-cloak {
-  display: none !important;
-}
-
-
 //
 // Use this file to reset simple bootstrap styles
 // instead of modifying the core files
@@ -39,7 +29,7 @@ hr {
 }
 
 // custom element
-now {
+[data-now] {
   display: inline-block;
 }
 
@@ -278,13 +268,6 @@ fieldset {
   }
 }
 
-// Angular UI.Bootstrap
-.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
-
-.nav-tabs.nav-justified > .active > a, .nav-tabs.nav-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:focus {
-  border-bottom: 0;
-}
-
 // allow font awesome to be placed instead of glyphicon in slider
 .glyphicon:extend(.fa all) {
   &.glyphicon-chevron-right:extend(.fa-chevron-right all) {};
@@ -301,4 +284,11 @@ fieldset {
 .modal-backdrop {
   position: fixed;
   bottom: 0;
+}
+
+// fix for ie9 (dropdwon no showing)
+.topnavbar,
+.navbar,
+.navbar .dropdown-menu {
+  filter: none !important;
 }

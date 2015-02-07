@@ -7,5 +7,5 @@ urlpatterns = patterns('',
     # url(r'^$', 'SpendingCoach.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    (r'^$', TemplateView.as_view(template_name='index-hello.html')),
+    (r'^$', TemplateView.as_view(template_name='index.html'))
 )

@@ -22,7 +22,7 @@
   border-left: 1px solid @offsidebar-border-color;
   background-color: @offsidebar-bg;
   color: @offsidebar-color;
-  z-index: @z-index-main-section + 5;
+  z-index: -1;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   .transition(all .3s ease);
@@ -71,6 +71,7 @@
 .offsidebar-open  {
   .offsidebar {
     overflow-y: auto;
+    z-index: @z-index-main-section + 5;
   }
   @media @tablet {
     overflow-y: auto;

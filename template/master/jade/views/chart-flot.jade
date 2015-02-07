@@ -1,89 +1,83 @@
-h3 
-  .pull-right.text-center
-    div(sparkline="", data-bar-color="#cfdbe2", data-height="20", data-bar-width="3", data-bar-spacing="2", values="1,0,4,9,5,7,8,9,5,7,8,4,7")
-  | Flot charts
+extends ../_layout
 
-.container-fluid(ng-controller="FlotChartController")
-  // START row
-  .row
-    .col-lg-6
-      #panelChart1.panel.panel-default
-        .panel-heading
-          paneltool(tool-collapse, tool-dismiss, tool-refresh="traditional")
-          .panel-title Area
-        .panel-wrapper(collapse="panelChart1")
-          .panel-body
-            .chart-area.flot-chart(data-source="server/chart/area.json")
-    .col-lg-6
-      #panelChart9.panel.panel-default
-        .panel-heading
-          paneltool(tool-collapse, tool-dismiss, tool-refresh="traditional")
-          .panel-title Area Spline
-        .panel-wrapper(collapse="panelChart9")
-          .panel-body
-            .chart-spline.flot-chart(data-source="server/chart/spline.json")
-  // END row
+block active
+  - sidebar_active = 'chart-flot.html'
 
-  // START row
-  .row
-    .col-lg-6
-      #panelChart2.panel.panel-default
-        .panel-heading
-          paneltool(tool-collapse, tool-dismiss)
-          .panel-title Bar
-        .panel-wrapper(collapse="panelChart2")
+block content
+  .content-heading
+    .pull-right.text-center
+      div(data-sparkline="", data-bar-color="#cfdbe2", data-height="20", data-bar-width="3", data-bar-spacing="2", data-values="1,0,4,9,5,7,8,9,5,7,8,4,7")
+    | Flot charts
+
+  .container-fluid
+    // START row
+    .row
+      .col-lg-6
+        #panelChart1.panel.panel-default
+          .panel-heading
+            .panel-title Area
           .panel-body
-            .chart-bar.flot-chart(data-source="server/chart/bar.json")
-    .col-lg-6
-      #panelChart3.panel.panel-default
-        .panel-heading
-          paneltool(tool-collapse, tool-dismiss)
-          .panel-title Bar - Stacked
-        .panel-wrapper(collapse="panelChart3")
+            .chart-area.flot-chart
+      .col-lg-6
+        #panelChart9.panel.panel-default
+          .panel-heading
+            .panel-title Area Spline
+          .panel-body
+            .chart-spline.flot-chart
+    // END row
+    // START row
+    .row
+      .col-lg-6
+        #panelChart2.panel.panel-default
+          .panel-heading
+            .panel-title Bar
+          .panel-body
+            .chart-bar.flot-chart
+      .col-lg-6
+        #panelChart3.panel.panel-default
+          .panel-heading
+            .panel-title Bar - Stacked
           .panel-body
             .indicator.show
               span.spinner
-            .chart-bar-stacked.flot-chart(data-source="server/chart/barstacked.json")
-  // END row
-  // START row
-  .row
-    .col-lg-12
-      #panelChart4.panel.panel-default
-        .panel-heading
-          paneltool(tool-collapse, tool-dismiss)
-          .panel-title Real Time
-        .panel-wrapper(collapse="panelChart4")
+            .chart-bar-stacked.flot-chart
+    // END row
+    // START row
+    .row
+      .col-lg-12
+        #panelChart4.panel.panel-default
+          .panel-heading
+            .panel-title Line
           .panel-body
-            .chart-realtime.flot-chart(data-source="server/chart/realtime.json")
-  // END row
-  // START row
-  .row
-    .col-lg-12
-      #panelChart4.panel.panel-default
-        .panel-heading
-          paneltool(tool-collapse, tool-dismiss)
-          .panel-title Line
-        .panel-wrapper(collapse="panelChart4")
+            .chart-line.flot-chart
+    // END row
+    // START row
+    .row
+      .col-md-6
+        #panelChart5.panel.panel-default
+          .panel-heading
+            .panel-title Pie
           .panel-body
-            .chart-line.flot-chart(data-source="server/chart/line.json")
-  // END row
-  // START row
-  .row
-    .col-md-6
-      #panelChart5.panel.panel-default
-        .panel-heading
-          paneltool(tool-collapse, tool-dismiss)
-          .panel-title Pie
-        .panel-wrapper(collapse="panelChart5")
+            .chart-pie.flot-chart
+      .col-md-6
+        #panelChart6.panel.panel-default
+          .panel-heading
+            .panel-title Donut 
+              small (loaded from json)
           .panel-body
-            .chart-pie.flot-chart(data-source="server/chart/pie.json")
-    .col-md-6
-      #panelChart6.panel.panel-default
-        .panel-heading
-          paneltool(tool-collapse, tool-dismiss)
-          .panel-title Donut 
-            small (loaded from json)
-        .panel-wrapper(collapse="panelChart6")
-          .panel-body
-            .chart-donut.flot-chart(data-source="server/chart/donut.json")
-  // END row
+            .chart-donut.flot-chart
+    // END row
+
+block vendor_js
+  // SPARKLINE
+  script(src='vendor/sparklines/jquery.sparkline.min.js')
+  // FLOT CHART
+  script(src='../vendor/Flot/jquery.flot.js')
+  script(src='../vendor/flot.tooltip/js/jquery.flot.tooltip.min.js')
+  script(src='../vendor/Flot/jquery.flot.resize.js')
+  script(src='../vendor/Flot/jquery.flot.pie.js')
+  script(src='../vendor/Flot/jquery.flot.time.js')
+  script(src='../vendor/Flot/jquery.flot.categories.js')
+  script(src='../vendor/flot-spline/js/jquery.flot.spline.min.js')
+  script(src='js/demo/demo-flot.js')
+

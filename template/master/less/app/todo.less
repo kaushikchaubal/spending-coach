@@ -8,18 +8,6 @@
   }
 
   .todo-item {
-    .transition(~"color 0.6s, background-color 0.3s");
-    
-    &.ng-enter {
-      .animation(fadeInLeft 1s);
-    }
-    
-    &.ng-leave {
-      position: absolute;
-      left: 0; right: 0;
-      .animation(fadeOutDown .7s);
-      .animation-fill-mode(both);
-    }
     
     .todo-edit {
       display: none;

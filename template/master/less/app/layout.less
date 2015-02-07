@@ -53,9 +53,6 @@ html, body {
   overflow-x: hidden;
   // padding-bottom: @footer-hg !important; // ensure a space for the footer
   // .transition(all .3s cubic-bezier(.23,1,.32,1));
-  &.ng-leave {
-    display: none;
-  }
 
   // Contains the main sidebar
   > .aside {
@@ -133,7 +130,9 @@ html, body {
     }    
   }
 
-  > h3 {
+  > h3,
+  > .content-heading {
+    .h3;
     color: #929292;
     margin: -15px;
     margin-bottom: 20px;
@@ -160,7 +159,8 @@ html, body {
   @media @tablet {
     padding: @content-padding;
     //overflow: auto; // required for portlets
-    > h3 {
+    > h3,
+    > .content-heading {
       margin: -@content-padding;
       margin-bottom: @content-padding;
       padding: @content-padding;

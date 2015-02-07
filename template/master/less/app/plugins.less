@@ -63,7 +63,7 @@ body {
   @multiple-tag-bg: #f5f6f7;
 
   .chosen-container {
-    // width: 100% !important;
+    width: 100% !important;
     max-width: 100%;
   }
 
@@ -112,38 +112,18 @@ body {
   .chosen-container-multi .chosen-choices li.search-field input[type=text] {
     color: @input-color-placeholder;
   }
-  
-  /* Support for input groups */
-  
-  .input-group {
-    .chosen-container:last-child > a {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-    }
-    
-    select:first-child + .chosen-container > a {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-
-  }
 
   /**
    * Filestyle
    */
 
   .bootstrap-filestyle {
-    // max-width: 380px;
+    max-width: 380px;
   }
     
   // Made plugin responsive
-  [classyloader] {
+  [data-classyloader] {
     max-width: 100%;
-  }
-
-  // ui select
-  .ui-select-bootstrap .ui-select-toggle {
-    text-align: left;
   }
 
 } // body

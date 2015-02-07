@@ -10,14 +10,14 @@
 @content-width:   550px;
 @pre-width:       380px;
 
-flatdoc {
+.flatdoc-wrapper {
   display: block;
   margin: -15px; // expand over wrapper padding
   @media @tablet {
     margin: -20px; // expand over wrapper padding
   }
   
-  [role~="flatdoc"] {
+  .flatdoc {
     @media @tablet {
       display: table;
       table-layout: fixed;
@@ -27,7 +27,7 @@ flatdoc {
     height: 100%;
   }
 
-  [role~="flatdoc-menu"] {
+  .flatdoc-menu {
     @media @tablet {
       position: relative;
       display: table-cell;
@@ -51,7 +51,7 @@ flatdoc {
     }
   }
   
-  [role~="flatdoc-content"] {
+  .flatdoc-content {
     @media @tablet {
       display: table-cell;
       height: 100%;
