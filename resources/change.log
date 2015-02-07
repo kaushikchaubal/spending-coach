@@ -1,0 +1,859 @@
+`1.9.4 28/01/2015`
+
+- New Dashboard alternatives
+- New **jqGrid**
+- New Sortable
+- New Nestable
+- New **Code Editor** (angular)
+- New Tree view
+- New forms and tables **xEditable**
+- New **Image Crop**
+- New file upload module
+- New **uiSelect**
+- Added route helper provider
+- Added layout extras (see code editor)
+- Added momentum scrolling for sidebar/offsidebar
+- Added Flot chart realtime
+- Fix Flot chart refresh event
+- Updated AngularJS to 1.3.10
+- Updated Bootstrap to 3.3.2
+- Updated documentation
+
+  # ###
+  # There are many files listed in this update, but, since most are new features, 
+  # focus on the project you are using and review new files first, 
+  # then check to see changes are result from adding new features.
+  # ###
+
+  New files:
+
+  A backend-angular-seed/master/js/modules/services/route-helpers.js
+  A backend-angular-seed/master/less/app/layout-extra.less
+  A backend-angular/app/views/code-editor.html
+  A backend-angular/app/views/dashboard_v2.html
+  A backend-angular/app/views/dashboard_v3.html
+  A backend-angular/app/views/form-imagecrop.html
+  A backend-angular/app/views/form-uiselect.html
+  A backend-angular/app/views/form-xeditable.html
+  A backend-angular/app/views/nav-tree.html
+  A backend-angular/app/views/nestable.html
+  A backend-angular/app/views/sortable.html
+  A backend-angular/app/views/table-xeditable.html
+  A backend-angular/master/jade/views/code-editor.jade
+  A backend-angular/master/jade/views/dashboard_v2.jade
+  A backend-angular/master/jade/views/dashboard_v3.jade
+  A backend-angular/master/jade/views/form-imagecrop.jade
+  A backend-angular/master/jade/views/form-uiselect.jade
+  A backend-angular/master/jade/views/form-xeditable.jade
+  A backend-angular/master/jade/views/nav-tree.jade
+  A backend-angular/master/jade/views/nestable.jade
+  A backend-angular/master/jade/views/sortable.jade
+  A backend-angular/master/jade/views/table-xeditable.jade
+  A backend-angular/master/js/modules/controllers/code-editor.js
+  A backend-angular/master/js/modules/controllers/form-imgcrop.js
+  A backend-angular/master/js/modules/controllers/form-xeditable.js
+  A backend-angular/master/js/modules/controllers/navtree.js
+  A backend-angular/master/js/modules/controllers/nestable.js
+  A backend-angular/master/js/modules/controllers/sortable.js
+  A backend-angular/master/js/modules/controllers/table-xeditable.js
+  A backend-angular/master/js/modules/controllers/uiselect.js
+  A backend-angular/master/js/modules/directives/nestable.js
+  A backend-angular/master/js/modules/services/route-helpers.js
+  A backend-angular/master/less/app/code-editor.less
+  A backend-angular/master/less/app/form-imgcrop.less
+  A backend-angular/master/less/app/layout-extra.less
+  A backend-angular/master/less/app/nestable.less
+  A backend-angular/master/less/app/uiselect.less
+  A backend-angular/server/chart/barstackedv2.json
+  A backend-angular/server/chart/realtime.json
+  A backend-angular/server/chart/splinev2.json
+  A backend-angular/server/chart/splinev3.json
+  A backend-angular/server/editor/filetree.json
+  A backend-angular/server/editor/source/another.html
+  A backend-angular/server/editor/source/css/style.css
+  A backend-angular/server/editor/source/index.html
+  A backend-angular/server/editor/source/js/script.js
+  A backend-angular/server/treedata.json
+  A backend-angular/server/xeditable-groups.json
+
+  A backend-jquery/app/dashboard_v2.html
+  A backend-jquery/app/dashboard_v3.html
+  A backend-jquery/app/js/demo/demo-jqgrid.js
+  A backend-jquery/app/js/demo/demo-nestable.js
+  A backend-jquery/app/js/demo/demo-sortable.js
+  A backend-jquery/app/nestable.html
+  A backend-jquery/app/sortable.html
+  A backend-jquery/app/table-jqgrid.html
+  A backend-jquery/master/jade/views/dashboard_v2.jade
+  A backend-jquery/master/jade/views/dashboard_v3.jade
+  A backend-jquery/master/jade/views/nestable.jade
+  A backend-jquery/master/jade/views/sortable.jade
+  A backend-jquery/master/jade/views/table-jqgrid.jade
+  A backend-jquery/master/js/modules/demo/demo-jqgrid.js
+  A backend-jquery/master/js/modules/demo/demo-nestable.js
+  A backend-jquery/master/js/modules/demo/demo-sortable.js
+  A backend-jquery/master/less/app/jqgrid.less
+  A backend-jquery/master/less/app/nestable.less
+  A backend-jquery/server/jqgrid-tree.json
+  A backend-jquery/server/jqgrid.json
+
+  A backend-mvc5/Angle/Angle/Content/Json/jqgrid-tree.json
+  A backend-mvc5/Angle/Angle/Content/Json/jqgrid.json
+  A backend-mvc5/Angle/Angle/Scripts/demo/demo-jqgrid.js
+  A backend-mvc5/Angle/Angle/Scripts/demo/demo-nestable.js
+  A backend-mvc5/Angle/Angle/Scripts/demo/demo-sortable.js
+  A backend-mvc5/Angle/Angle/Vendor/html.sortable/dist/html.sortable.js
+  A backend-mvc5/Angle/Angle/Vendor/jqgrid/css/ui.jqgrid.css
+  A backend-mvc5/Angle/Angle/Vendor/jqgrid/js/i18n/grid.locale-en.js
+  A backend-mvc5/Angle/Angle/Vendor/jqgrid/js/jquery.jqGrid.js
+  A backend-mvc5/Angle/Angle/Vendor/jquery-ui/themes/smoothness/*
+  A backend-mvc5/Angle/Angle/Vendor/nestable/jquery.nestable.js
+  A backend-mvc5/Angle/Angle/Views/Dashboard/Dashboard_v1.cshtml
+  A backend-mvc5/Angle/Angle/Views/Dashboard/Dashboard_v2.cshtml
+  A backend-mvc5/Angle/Angle/Views/Dashboard/Dashboard_v3.cshtml
+  A backend-mvc5/Angle/Angle/Views/Elements/Nestable.cshtml
+  A backend-mvc5/Angle/Angle/Views/Elements/Sortable.cshtml
+  A backend-mvc5/Angle/Angle/Views/Tables/TableJQGrid.cshtml
+
+  A backend-rails/Angle/app/assets/api/jqgrid-tree.json
+  A backend-rails/Angle/app/assets/api/jqgrid.json
+  A backend-rails/Angle/app/assets/javascripts/angle/modules/demo/demo-jqgrid.js
+  A backend-rails/Angle/app/assets/javascripts/angle/modules/demo/demo-nestable.js
+  A backend-rails/Angle/app/assets/javascripts/angle/modules/demo/demo-sortable.js
+  A backend-rails/Angle/app/assets/stylesheets/angle/app/jqgrid.scss
+  A backend-rails/Angle/app/assets/stylesheets/angle/app/nestable.scss
+  A backend-rails/Angle/app/views/dashboard/dashboard_v1.html.erb
+  A backend-rails/Angle/app/views/dashboard/dashboard_v2.html.erb
+  A backend-rails/Angle/app/views/dashboard/dashboard_v3.html.erb
+  A backend-rails/Angle/app/views/elements/nestable.html.erb
+  A backend-rails/Angle/app/views/elements/sortable.html.erb
+  A backend-rails/Angle/app/views/tables/jqgrid.html.erb
+  
+  A sass/app/jqgrid.scss
+  A sass/app/nestable.scss
+
+  Modified files:
+
+  M backend-angular-seed/app/css/app-rtl.css
+  M backend-angular-seed/app/css/app.css
+  M backend-angular-seed/app/js/app.js
+  M backend-angular-seed/app/js/base.js
+  M backend-angular-seed/master/bower.json
+  M backend-angular-seed/master/js/custom/custom.js
+  M backend-angular-seed/master/js/modules/config.js
+  M backend-angular-seed/master/less/app.less
+  M backend-angular-seed/master/less/app/offsidebar.less
+  M backend-angular-seed/master/less/app/sidebar.less
+  M backend-angular-seed/master/less/bootstrap/*
+
+  M backend-angular/app/css/app-rtl.css
+  M backend-angular/app/css/app.css
+  M backend-angular/app/js/app.js
+  M backend-angular/app/js/base.js
+  M backend-angular/app/views/chart-flot.html
+  M backend-angular/app/views/form-extended.html
+  M backend-angular/app/views/form-upload.html
+  M backend-angular/index.html
+  M backend-angular/master/bower.json
+  M backend-angular/master/jade/index.jade
+  M backend-angular/master/jade/views/chart-flot.jade
+  M backend-angular/master/jade/views/form-extended.jade
+  M backend-angular/master/jade/views/form-upload.jade
+  M backend-angular/master/js/app.init.js
+  M backend-angular/master/js/custom/custom.js
+  M backend-angular/master/js/modules/config.js
+  M backend-angular/master/js/modules/constants.js
+  M backend-angular/master/js/modules/controllers/flot-chart.js
+  M backend-angular/master/js/modules/controllers/upload.js
+  M backend-angular/master/js/modules/directives/filestyle.js
+  M backend-angular/master/js/modules/directives/sidebar.js
+  M backend-angular/master/js/modules/services/vector-map.js
+  M backend-angular/master/less/app.less
+  M backend-angular/master/less/app/animate.less
+  M backend-angular/master/less/app/bootstrap-reset.less
+  M backend-angular/master/less/app/offsidebar.less
+  M backend-angular/master/less/app/panels.less
+  M backend-angular/master/less/app/plugins.less
+  M backend-angular/master/less/app/sidebar.less
+  M backend-angular/master/less/app/typo.less
+  M backend-angular/master/less/app/utils.less
+  M backend-angular/master/less/bootstrap/*
+  M backend-angular/master/vendor.json
+  M backend-angular/server/sidebar-menu.json
+  M backend-angular/server/upload.php
+
+  M backend-jquery-seed/app/css/app-rtl.css
+  M backend-jquery-seed/app/css/app.css
+  M backend-jquery-seed/app/js/app.js
+  M backend-jquery-seed/master/less/app/offsidebar.less
+  M backend-jquery-seed/master/less/app/sidebar.less
+  M backend-jquery-seed/master/less/app/utils.less
+  M backend-jquery-seed/master/less/bootstrap/*
+
+  M backend-jquery/app/animations.html
+  M backend-jquery/app/buttons.html
+  M backend-jquery/app/calendar.html
+  M backend-jquery/app/carousel.html
+  M backend-jquery/app/chart-flot.html
+  M backend-jquery/app/chart-radial.html
+  M backend-jquery/app/colors.html
+  M backend-jquery/app/css/app-rtl.css
+  M backend-jquery/app/css/app.css
+  M backend-jquery/app/dashboard.html
+  M backend-jquery/app/documentation.html
+  M backend-jquery/app/dropdown-animations.html
+  M backend-jquery/app/form-extended.html
+  M backend-jquery/app/form-standard.html
+  M backend-jquery/app/form-validation.html
+  M backend-jquery/app/grid-masonry.html
+  M backend-jquery/app/grid.html
+  M backend-jquery/app/icons-font.html
+  M backend-jquery/app/icons-weather.html
+  M backend-jquery/app/invoice.html
+  M backend-jquery/app/js/app.js
+  M backend-jquery/app/js/demo/demo-flot.js
+  M backend-jquery/app/mailbox.html
+  M backend-jquery/app/maps-google.html
+  M backend-jquery/app/maps-vector.html
+  M backend-jquery/app/multilevel-1.html
+  M backend-jquery/app/multilevel-3.html
+  M backend-jquery/app/notifications.html
+  M backend-jquery/app/panels.html
+  M backend-jquery/app/portlets.html
+  M backend-jquery/app/profile.html
+  M backend-jquery/app/search.html
+  M backend-jquery/app/spinners.html
+  M backend-jquery/app/table-datatable.html
+  M backend-jquery/app/table-extended.html
+  M backend-jquery/app/table-standard.html
+  M backend-jquery/app/template.html
+  M backend-jquery/app/timeline.html
+  M backend-jquery/app/todo.html
+  M backend-jquery/app/typo.html
+  M backend-jquery/app/widgets.html
+  M backend-jquery/master/bower.json
+  M backend-jquery/master/jade/views/template.jade
+  M backend-jquery/master/js/modules/demo/demo-flot.js
+  M backend-jquery/master/js/modules/maps-vector.js
+  M backend-jquery/master/less/app.less
+  M backend-jquery/master/less/app/bootstrap-reset.less
+  M backend-jquery/master/less/app/offsidebar.less
+  M backend-jquery/master/less/app/panels.less
+  M backend-jquery/master/less/app/sidebar.less
+  M backend-jquery/master/less/app/utils.less
+  M backend-jquery/master/less/bootstrap/*
+  M backend-jquery/master/sidebar.json
+  M backend-jquery/master/vendor.json
+
+  M backend-mvc5-seed/Angle/Angle/Content/app/css/app-rtl.css
+  M backend-mvc5-seed/Angle/Angle/Content/app/css/app.css
+
+  M backend-mvc5/Angle/Angle.v12.suo
+  M backend-mvc5/Angle/Angle/Angle.csproj
+  M backend-mvc5/Angle/Angle/App_Start/BundleConfig.cs
+  M backend-mvc5/Angle/Angle/App_Start/RouteConfig.cs
+  M backend-mvc5/Angle/Angle/Content/app/css/app-rtl.css
+  M backend-mvc5/Angle/Angle/Content/app/css/app.css
+  M backend-mvc5/Angle/Angle/Controllers/DashboardController.cs
+  M backend-mvc5/Angle/Angle/Controllers/ElementsController.cs
+  M backend-mvc5/Angle/Angle/Controllers/TablesController.cs
+  M backend-mvc5/Angle/Angle/Scripts/app/modules/maps-vector.js
+  M backend-mvc5/Angle/Angle/Scripts/demo/demo-flot.js
+  M backend-mvc5/Angle/Angle/Views/Shared/_Sidebar.cshtml
+
+  M backend-rails-seed/Angle/app/assets/stylesheets/angle/app/offsidebar.scss
+  M backend-rails-seed/Angle/app/assets/stylesheets/angle/app/sidebar.scss
+  M backend-rails-seed/Angle/app/assets/stylesheets/angle/app/utils.scss
+
+  M backend-rails/Angle/app/assets/javascripts/angle/modules/demo/demo-flot.js
+  M backend-rails/Angle/app/assets/javascripts/angle/modules/maps-vector.js
+  M backend-rails/Angle/app/assets/javascripts/dashboard.js
+  M backend-rails/Angle/app/assets/javascripts/elements.js
+  M backend-rails/Angle/app/assets/javascripts/tables.js
+  M backend-rails/Angle/app/assets/stylesheets/angle/app.scss
+  M backend-rails/Angle/app/assets/stylesheets/angle/app/offsidebar.scss
+  M backend-rails/Angle/app/assets/stylesheets/angle/app/panels.scss
+  M backend-rails/Angle/app/assets/stylesheets/angle/app/sidebar.scss
+  M backend-rails/Angle/app/assets/stylesheets/angle/app/utils.scss
+  M backend-rails/Angle/app/assets/stylesheets/tables.css.scss
+  M backend-rails/Angle/app/controllers/api_controller.rb
+  M backend-rails/Angle/app/controllers/dashboard_controller.rb
+  M backend-rails/Angle/app/controllers/elements_controller.rb
+  M backend-rails/Angle/app/controllers/tables_controller.rb
+  M backend-rails/Angle/app/views/layouts/partials/_sidebar.html.erb
+  M backend-rails/Angle/config/routes.rb
+  M backend-rails/bower_install/bower.json
+  M backend-rails/bower_install/vendor.json
+
+  M sass/app.scss
+  M sass/app/offsidebar.scss
+  M sass/app/sidebar.scss
+
+  Removed files:
+
+  D backend-angular/master/js/modules/controllers/demo-upload.js
+  D backend-angular/master/less/app/form-dragdrop.less
+  D backend-angular/master/less/app/form-file.less
+  D backend-mvc5/Angle/Angle/Views/Dashboard/Index.cshtml
+  D backend-rails/Angle/app/views/dashboard/index.html.erb
+
+
+`1.9 18/01/2015`
+
+- New **MVC5** version (Entity demo)
+- New **Ruby on Rails** version (**Heroku** ready)
+- New MVC5 and Rails Seed projects
+- Added **SASS** version (standalone and Rails)
+- Added better support for Chosen on input groups (thanks @Soda)
+- Fix minor issue with offsidebar on low height devices (thanks @kepro)
+- Fix demo Flot tooltp NaN issue (thanks @zipo)
+- Fix demo Datatable colvis dropdown not hiding (thanks @nuggetboy)
+- Fix slider ctrl and jquery ui conflict
+- Improved Flot and slimScroll folders for unix like os
+- Updated documentation
+
+  New files:
+
+  A sass/
+  A backend-mvc5/
+  A backend-rails/
+  A backend-mvc5-seed/
+  A backend-rails-seed/
+  A documentation/mvc5/
+  A documentation/rails/
+  A backend-angular/vendor/jquery-ui/ui/
+
+  Modified files:
+
+  M backend-angular-seed/app/css/app-rtl.css
+  M backend-angular-seed/app/css/app.css
+  M backend-angular-seed/app/js/app.js
+  M backend-angular-seed/master/bower.json
+  M backend-angular-seed/master/js/modules/constants.js
+  M backend-angular-seed/master/less/app/offsidebar.less
+  M backend-angular-seed/master/vendor.json
+  M backend-angular/app/css/app-rtl.css
+  M backend-angular/app/css/app.css
+  M backend-angular/app/js/app.js
+  M backend-angular/app/views/form-extended.html
+  M backend-angular/app/views/form-standard.html
+  M backend-angular/master/bower.json
+  M backend-angular/master/jade/views/form-extended.jade
+  M backend-angular/master/jade/views/form-standard.jade
+  M backend-angular/master/js/modules/constants.js
+  M backend-angular/master/js/modules/config.js
+  M backend-angular/master/js/modules/controllers/datatable.js
+  M backend-angular/master/js/modules/controllers/flot-chart.js
+  M backend-angular/master/less/app/datatable.less
+  M backend-angular/master/less/app/offsidebar.less
+  M backend-angular/master/less/app/plugins.less
+  M backend-angular/master/vendor.json
+  M backend-jquery-seed/app/css/app-rtl.css
+  M backend-jquery-seed/app/css/app.css
+  M backend-jquery-seed/app/js/app.js
+  M backend-jquery-seed/app/singleview.html
+  M backend-jquery-seed/app/submenu.html
+  M backend-jquery-seed/master/bower.json
+  M backend-jquery-seed/master/jade/views/partials/_head.jade
+  M backend-jquery-seed/master/less/app/offsidebar.less
+  M backend-jquery-seed/master/vendor.json
+  M backend-jquery/app/css/app-rtl.css
+  M backend-jquery/app/css/app.css
+  M backend-jquery/app/js/demo/demo-flot.js
+  M backend-jquery/app/*.html
+  M backend-jquery/master/bower.json
+  M backend-jquery/master/jade/_layout_page.jade
+  M backend-jquery/master/jade/views/chart-flot.jade
+  M backend-jquery/master/jade/views/dashboard.jade
+  M backend-jquery/master/jade/views/partials/_head.jade
+  M backend-jquery/master/jade/views/partials/_scripts.jade
+  M backend-jquery/master/js/modules/demo/demo-flot.js
+  M backend-jquery/master/less/app/offsidebar.less
+  M backend-jquery/master/vendor.json
+
+`1.8 09/01/2015`
+
+- New **AngularJS Seed project**
+- New **jQuery** version and Seed project
+- Added offline documentation (main reference)
+- Added events and demo for panel tools
+- Added new ngTable ajax demo
+- Added npm start configuration 
+- Added gulp ngAnnotate and sourcemaps generation
+- Fix item position on sidebar collapsed
+- Updated landing page with demos
+- Updated documentation
+
+  New files:
+
+  A backend-jquery/
+  A backend-jquery-seed/
+  A backend-angular-seed/
+  A backend-angular/master/js/modules/controllers/demo-panels.js
+  A documentation/
+
+  Modified files:
+
+  M backend-angular/app/css/app-rtl.css
+  M backend-angular/app/css/app.css
+  M backend-angular/app/js/app.js
+  M backend-angular/app/js/base.js
+  M backend-angular/app/views/panels.html
+  M backend-angular/master/bower.json
+  M backend-angular/master/gulpfile.js
+  M backend-angular/master/jade/views/panels.jade
+  M backend-angular/master/js/modules/controllers/ngtable.js
+  M backend-angular/master/js/modules/directives/panel-tools.js
+  M backend-angular/master/js/modules/directives/sidebar.js
+  M backend-angular/master/less/app/animate.less
+  M backend-angular/master/package.json
+  M backend-angular/master/vendor.base.json
+  M backend-angular/server/table-data.json
+  M frontend/master/gulpfile.js
+  M frontend/master/jade/sections/header.jade
+  M frontend/master/package.json
+  M frontend/site/index.html
+
+`1.7 03/01/2015`
+
+- Added **frontpage**
+- Added **ngTable**
+- Added chosen ajax demo
+- Added better ajax support for tags input directive
+- Fix .abs-center component media query (Thanks kepro!)
+- Fix case in Flot folder name (Thanks byrdman662!)
+- Fix menu collapsed and timeline items bug (Thanks eid_mosad!)
+- Minor improvements to Gulpfile
+
+  New files:
+  
+  A app/views/table-ngtable.html
+  A master/jade/views/table-ngtable.jade
+  A master/js/modules/controllers/ngtable.js
+  A master/less/app/table-ngtable.less
+  A server/chosen-states.json
+  A server/cities.json
+  A server/table-data.json
+  
+  Modified files:
+
+  M app/css/app-rtl.css
+  M app/css/app.css
+  M app/documentation/readme.md
+  M app/js/app.js
+  M app/views/form-extended.html
+  M master/bower.json
+  M master/gulpfile.js
+  M master/jade/views/form-extended.jade
+  M master/js/modules/config.js
+  M master/js/modules/constants.js
+  M master/js/modules/controllers/demo-forms.js
+  M master/js/modules/directives/tags-input.js
+  M master/less/app.less
+  M master/less/app/layout.less
+  M master/less/app/utils.less
+  M master/vendor.json
+  M server/sidebar-menu.json
+
+
+`1.6.1 20/12/2014`
+
+- Fix base.js generation
+- Gulpfile improvements
+- Added datatable ajax demo
+- Updated documentation
+
+  New files:
+
+  A master/.bowerrc
+  A master/vendor.base.json
+  A server/datatable.json
+
+  Modified files:
+
+  M app/css/app-rtl.css
+  M app/css/app.css
+  M app/js/app.js
+  M app/js/base.js
+  M app/views/table-datatable.html
+  M app/documentation/readme.md
+  M master/bower.json
+  M master/gulpfile.js
+  M master/jade/views/table-datatable.jade
+  M master/js/modules/controllers/datatable.js
+  M master/less/app/datatable.less
+  M master/package.json
+
+`1.6 19/12/2014`
+
+- New **bower** managed dependencies
+- New whirl plugin (formally know as csspiner)
+- New Angular Chosen select
+- New native Angular wizard
+- Removed php in favor of plain json files
+- Fix sidebar minor bug on iPad (bottom not painting)
+- Fix Google maps on modal
+- Updated documentation
+
+  New files:
+  
+  A master/bower.json
+  A master/vendor.json
+  A server/chart/area.json
+  A server/chart/bar.json
+  A server/chart/barstacked.json
+  A server/chart/donut.json
+  A server/chart/line.json
+  A server/chart/pie.json
+  A server/chart/spline.json
+  
+  Modified files:
+  
+  M app/css/app-rtl.css
+  M app/css/app.css
+  M app/css/theme-a.css
+  M app/css/theme-b.css
+  M app/css/theme-c.css
+  M app/css/theme-d.css
+  M app/css/theme-e.css
+  M app/css/theme-f.css
+  M app/css/theme-g.css
+  M app/css/theme-h.css
+  M app/documentation/readme.md
+  M app/js/app.js
+  M app/views/chart-flot.html
+  M app/views/dashboard.html
+  M app/views/form-extended.html
+  M app/views/form-wizard.html
+  M app/views/search.html
+  M app/views/spinners.html
+  M master/gulpfile.js
+  M master/jade/views/chart-flot.jade
+  M master/jade/views/dashboard.jade
+  M master/jade/views/form-extended.jade
+  M master/jade/views/form-wizard.jade
+  M master/jade/views/search.jade
+  M master/jade/views/spinners.jade
+  M master/js/modules/config.js
+  M master/js/modules/constants.js
+  M master/js/modules/controllers/flot-chart.js
+  M master/js/modules/controllers/modals-gmap.js
+  M master/js/modules/directives/form-wizard.js
+  M master/js/modules/directives/panel-tools.js
+  M master/less/app.less
+  M master/less/app/bootstrap-reset.less
+  M master/less/app/docs.less
+  M master/less/app/form-wizard.less
+  M master/less/app/layout.less
+  M master/less/app/ngwig.less
+  M master/less/app/plugins.less
+  M master/less/app/sidebar.less
+  M master/less/app/spinner.less
+  M master/less/themes/theme-a.less
+  M master/less/themes/theme-b.less
+  M master/less/themes/theme-c.less
+  M master/less/themes/theme-d.less
+  M master/less/themes/theme-e.less
+  M master/less/themes/theme-f.less
+  M master/less/themes/theme-g.less
+  M master/less/themes/theme-h.less
+  M master/package.json
+  
+  Removed files:
+  
+  D master/js/modules/directives/chosen-select.js
+  D server/chart-data-area.php
+  D server/chart-data-bar.php
+  D server/chart-data-barstacked.php
+  D server/chart-data-donut.json
+  D server/chart-data-line.php
+  D server/chart-data-pie.php
+  D server/chart-data-spline.php
+  D server/chart-data.php
+
+
+`1.5.2 13/12/2014`
+
+- New **404** not found page
+- Update to Bootstrap 3.3.1
+- Update bootstrap UI to 0.12.0
+- Update UI Router to 0.2.13
+- Fix FlotChart script uses GET by default
+- Fix removed 'http' to avoid mixed content issues
+
+  New files:
+
+  A app/pages/404.html
+  A master/jade/pages/404.jade
+
+  Modified files:
+
+  M app/css/app-rtl.css
+  M app/css/app.css
+  M app/js/app.js
+  M app/js/base.js
+  M app/views/buttons.html
+  M app/views/chart-flot.html
+  M app/views/chart-radial.html
+  M app/views/dashboard.html
+  M app/views/dropdown-animations.html
+  M app/views/form-extended.html
+  M app/views/form-standard.html
+  M app/views/form-wizard.html
+  M app/views/interaction.html
+  M app/views/mailbox-view.html
+  M app/views/partials/chat.html
+  M app/views/partials/top-navbar.html
+  M app/views/search.html
+  M app/views/table-extended.html
+  M app/views/widgets.html
+  M master/gulpfile.js
+  M master/jade/views/buttons.jade
+  M master/jade/views/chart-flot.jade
+  M master/jade/views/chart-radial.jade
+  M master/jade/views/dashboard.jade
+  M master/jade/views/dropdown-animations.jade
+  M master/jade/views/form-extended.jade
+  M master/jade/views/form-standard.jade
+  M master/jade/views/form-wizard.jade
+  M master/jade/views/interaction.jade
+  M master/jade/views/mailbox-view.jade
+  M master/jade/views/partials/chat.jade
+  M master/jade/views/partials/top-navbar.jade
+  M master/jade/views/search.jade
+  M master/jade/views/table-extended.jade
+  M master/jade/views/widgets.jade
+  M master/js/modules/config.js
+  M master/js/modules/controllers/calendar.js
+  M master/js/modules/controllers/demo-carousel.js
+  M master/js/modules/controllers/demo-typeahead.js
+  M master/js/modules/controllers/flot-chart.js
+  M master/less/app/bootstrap-reset.less
+  M master/less/app/datepicker.less
+  M master/less/app/form-tags.less
+  M master/less/app/layout.less
+  M master/less/app/mailbox.less
+  M master/less/app/media-queries.less
+  M master/less/app/offsidebar.less
+  M master/less/app/plugins.less
+  M master/less/app/typo.less
+  M master/less/app/utils.less
+  M master/package.json
+  M server/sidebar-menu.json
+  M master/less/bootstrap/*.less
+
+`1.5 03/12/2014`
+
+- New mailbox routes and load mails from JSON api
+- New angular ngDialog
+- Update AngularJS to 1.2.27
+- Update UI Router to 0.2.12
+- Update ocLazyLoad to 0.5.0
+- Added angular-resource by default in base vendor files
+- Added support for links at top level menu items
+- Added multilevel menu with nested views
+- Added sparkline element support
+- Fix chosen plugin not responsive
+- Fix parsley on form wizard
+- Fix datepicker in search page
+- Removed datepicker directive script
+
+  New files:
+
+  A app/views/ngdialog-template.html
+  A app/views/ngdialog.html
+  A master/jade/views/ngdialog-template.jade
+  A master/jade/views/ngdialog.jade
+  A master/js/modules/controllers/demo-dialog.js
+  A master/less/app/ngdialog.less
+  A server/mails.json
+
+  Modified files:
+
+  M app/css/app-rtl.css
+  M app/css/app.css
+  M app/js/app.js
+  M app/js/base.js
+  M app/views/mailbox-compose.html
+  M app/views/mailbox-inbox.html
+  M app/views/mailbox-view.html
+  M app/views/mailbox.html
+  M app/views/partials/sidebar.html
+  M app/views/search.html
+  M app/views/table-extended.html
+  M master/gulpfile.js
+  M master/jade/views/mailbox-compose.jade
+  M master/jade/views/mailbox-inbox.jade
+  M master/jade/views/mailbox-view.jade
+  M master/jade/views/mailbox.jade
+  M master/jade/views/partials/sidebar.jade
+  M master/jade/views/search.jade
+  M master/jade/views/table-extended.jade
+  M master/js/app.init.js
+  M master/js/modules/config.js
+  M master/js/modules/constants.js
+  M master/js/modules/controllers/mailbox.js
+  M master/js/modules/controllers/main.js
+  M master/js/modules/controllers/sidebar-menu.js
+  M master/js/modules/directives/sparklines.js
+  M master/less/app.less
+  M master/less/app/layout.less
+  M master/less/app/mailbox.less
+  M master/less/app/ngwig.less
+  M master/less/app/plugins.less
+  M master/less/app/sidebar.less
+  M master/less/app/table-grid.less
+  M master/less/app/utils.less
+  M server/sidebar-menu.json
+
+  Removed files:
+
+  D master/js/modules/directives/datepicker.js
+
+`1.4 21/11/2014`
+
+- New form controller for chosen data
+- New controllers for login/register pages
+- New form validation for login/register pages
+- New datatable option to hide columns by default
+- New custom.js demo for easy customization (master folder)
+- Fix topnavbar position on fixed-boxed layout
+- Fix iOS input style (shadow removed)
+- Fix Safari issue with sidebar no showing
+- Fix padding size (hidden text on small input text - Thanks ChrisMK)
+- Fix ng-bind data on pages footer
+- Update documentation
+
+  New files:
+
+  A master/js/custom/README.txt
+  A master/js/custom/custom.js
+  A master/js/modules/controllers/access-login.js
+  A master/js/modules/controllers/access-register.js
+  A master/js/modules/controllers/demo-forms.js
+  
+  Modified files:
+  
+  M app/css/app-rtl.css
+  M app/css/app.css
+  M app/documentation/readme.md
+  M app/js/app.js
+  M app/js/base.js
+  M app/pages/lock.html
+  M app/pages/login.html
+  M app/pages/recover.html
+  M app/pages/register.html
+  M app/views/form-extended.html
+  M master/gulpfile.js
+  M master/jade/pages/lock.jade
+  M master/jade/pages/login.jade
+  M master/jade/pages/recover.jade
+  M master/jade/pages/register.jade
+  M master/jade/views/app.jade
+  M master/jade/views/form-extended.jade
+  M master/js/app.init.js
+  M master/js/modules/config.js
+  M master/js/modules/controllers/datatable.js
+  M master/js/modules/directives/chosen-select.js
+  M master/less/app/bootstrap-reset.less
+  M master/less/app/form-elements.less
+  M master/less/app/layout.less
+  M master/less/app/top-navbar.less
+  M master/less/bootstrap/variables.less
+
+`1.3 19/11/2014`
+
+- New Angular Wysiwyg
+- New Mailbox app nested routes
+- New Form upload demo
+- Update Font Awesome to 4.2.0
+- Fix null anchor directive check for dropdown links
+  
+  New files:
+
+  A app/views/form-upload.html
+  A app/views/mailbox-compose.html
+  A app/views/mailbox-inbox.html
+  A app/views/mailbox-view.html
+  A master/jade/views/form-upload.jade
+  A master/jade/views/mailbox-compose.jade
+  A master/jade/views/mailbox-inbox.jade
+  A master/jade/views/mailbox-view.jade
+  A master/js/modules/controllers/mailbox.js
+  A master/less/app/ngwig.less
+
+  Modified files:
+
+  M app/css/app-rtl.css
+  M app/css/app.css
+  M app/i18n/en.json
+  M app/i18n/es_AR.json
+  M app/js/app.js
+  M app/views/form-extended.html
+  M app/views/icons-font.html
+  M app/views/mailbox.html
+  M app/views/partials/top-navbar.html
+  M master/jade/views/form-extended.jade
+  M master/jade/views/icons-font.jade
+  M master/jade/views/mailbox.jade
+  M master/jade/views/partials/top-navbar.jade
+  M master/js/modules/config.js
+  M master/js/modules/constants.js
+  M master/js/modules/controllers/demo-upload.js
+  M master/js/modules/directives/anchor.js
+  M master/less/app.less
+  M master/less/app/bootstrap-reset.less
+  M master/less/app/form-elements.less
+  M master/less/app/layout.less
+  M master/less/app/mailbox.less
+  M master/less/app/utils.less
+  M master/less/bootstrap/variables.less
+  M server/sidebar-menu.json
+  M server/upload.php
+
+`1.2 18/11/2014`
+
+- Update Flot charts to 0.8.3
+- Update Fullcalendar to 2.0.3
+- Update Momentjs to 2.8.3
+- Update jQueryUI to 1.11.1
+- Update vendor path for lazy load
+- Removed Bootstrap Datetimepicker (in favor of BootstrapUI)
+- Added example code for custom routes resolve
+- Fix markdown editor fullscreen mode
+- Fix minor code changes
+- Update documentation
+
+  Modified Files
+
+  M app/css/app-rtl.css
+  M app/css/app.css
+  M app/documentation/readme.md
+  M app/js/app.js
+  M app/views/form-extended.html
+  M master/jade/views/form-extended.jade
+  M master/js/modules/config.js
+  M master/js/modules/constants.js
+  M master/js/modules/directives/now.js
+  M master/js/modules/directives/validate-form.js
+  M master/less/app/markdownarea.less
+  D master/js/modules/directives/datepicker.js
+
+`1.1 08/10/2014`
+
+- Added Profile
+- Added Todo List 
+- Added changed and livereload to gulp file
+- Removed store.js in favor of native storage support
+- Removed w3c from gulp file (optional)
+- Fix on sidebar item active class check 
+- Fix modules dependency injection
+- Fix chart y axis position on RTL
+- Update timeline component
+- Update calendar component
+- Update node package modules
+- Updated documentation
+
+`1.0 30/09/2014`
+
+- Initial release

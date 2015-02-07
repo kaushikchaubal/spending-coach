@@ -1,0 +1,18 @@
+{
+  "name": "Angle",
+  "version": "0.0.0",
+  "description": "Angle - Bootstrap Admin App + jQuery",
+  "author": "@themicon_co",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-expect-file": "0.0.7",
+    "gulp-util": "^3.0.1",
+    "through2": "^0.6.3"
+  },
+  "scripts": {
+    "prestart": "bower install",
+    "start": "npm install",
+    "poststart": "gulp"
+  }
+}
