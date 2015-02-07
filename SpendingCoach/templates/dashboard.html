@@ -6,7 +6,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
    <meta name="description" content="Bootstrap Admin App + jQuery">
    <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
-   <title>Angle - Bootstrap Admin Template</title>
+   <title>Spending Coach</title>
    <!-- =============== VENDOR STYLES ===============-->
    <!-- FONT AWESOME-->
    <link rel="stylesheet" href="{{STATIC_URL}}vendor/fontawesome/{{STATIC_URL}}css/font-awesome.min.css">
@@ -33,7 +33,7 @@
             <div class="navbar-header">
                <a href="#/" class="navbar-brand">
                   <div class="brand-logo">
-                     <img src="{{STATIC_URL}}img/logo.png" alt="App Logo" class="img-responsive">
+                     Spending Coach
                   </div>
                   <div class="brand-logo-collapsed">
                      <img src="{{STATIC_URL}}img/logo-single.png" alt="App Logo" class="img-responsive">
@@ -233,124 +233,9 @@
                      </ul>
                   </li>
                   <li class=" ">
-                     <a href="widgets.html" title="Widgets">
-                        <em class="icon-grid"></em>
-                        <div class="label label-success pull-right">30</div>
-                        <span data-localize="sidebar.nav.WIDGETS">Widgets</span>
-                     </a>
+                     
                   </li>
-                  <li class="nav-heading ">
-                     <span>Components</span>
-                  </li>
-                  <li class=" ">
-                     <a href="#elements" title="Elements" data-toggle="collapse">
-                        <em class="icon-chemistry"></em>
-                        <span data-localize="sidebar.nav.element.ELEMENTS">Elements</span>
-                     </a>
-                     <ul id="elements" class="nav sidebar-subnav collapse">
-                        <li class="sidebar-subnav-header">Elements</li>
-                        <li class=" ">
-                           <a href="buttons.html" title="Buttons">
-                              <em></em>
-                              <span data-localize="sidebar.nav.element.BUTTON">Buttons</span>
-                           </a>
-                        </li>
-                        <li class=" ">
-                           <a href="notifications.html" title="Notifications">
-                              <em></em>
-                              <span data-localize="sidebar.nav.element.NOTIFICATION">Notifications</span>
-                           </a>
-                        </li>
-                        <li class=" ">
-                           <a href="carousel.html" title="Carousel">
-                              <em></em>
-                              <span data-localize="sidebar.nav.element.INTERACTION">Carousel</span>
-                           </a>
-                        </li>
-                        <li class=" ">
-                           <a href="spinners.html" title="Spinners">
-                              <em></em>
-                              <span data-localize="sidebar.nav.element.SPINNER">Spinners</span>
-                           </a>
-                        </li>
-                        <li class=" ">
-                           <a href="animations.html" title="Animations">
-                              <em></em>
-                              <span data-localize="sidebar.nav.element.ANIMATION">Animations</span>
-                           </a>
-                        </li>
-                        <li class=" ">
-                           <a href="dropdown-animations.html" title="Dropdown">
-                              <em></em>
-                              <span data-localize="sidebar.nav.element.DROPDOWN">Dropdown</span>
-                           </a>
-                        </li>
-                        <li class=" ">
-                           <a href="nestable.html" title="Nestable">
-                              <em></em>
-                              <div class="label label-success pull-right">New</div>
-                              <span>Nestable</span>
-                           </a>
-                        </li>
-                        <li class=" ">
-                           <a href="sortable.html" title="Sortable">
-                              <em></em>
-                              <div class="label label-success pull-right">New</div>
-                              <span>Sortable</span>
-                           </a>
-                        </li>
-                        <li class=" ">
-                           <a href="panels.html" title="Panels">
-                              <em></em>
-                              <span data-localize="sidebar.nav.element.PANEL">Panels</span>
-                           </a>
-                        </li>
-                        <li class=" ">
-                           <a href="portlets.html" title="Portlets">
-                              <em></em>
-                              <span data-localize="sidebar.nav.element.PORTLET">Portlets</span>
-                           </a>
-                        </li>
-                        <li class=" ">
-                           <a href="grid.html" title="Grid">
-                              <em></em>
-                              <span data-localize="sidebar.nav.element.GRID">Grid</span>
-                           </a>
-                        </li>
-                        <li class=" ">
-                           <a href="grid-masonry.html" title="Grid Masonry">
-                              <em></em>
-                              <span data-localize="sidebar.nav.element.GRID_MASONRY">Grid Masonry</span>
-                           </a>
-                        </li>
-                        <li class=" ">
-                           <a href="typo.html" title="Typography">
-                              <em></em>
-                              <span data-localize="sidebar.nav.element.TYPO">Typography</span>
-                           </a>
-                        </li>
-                        <li class=" ">
-                           <a href="icons-font.html" title="Font Icons">
-                              <em></em>
-                              <div class="label label-success pull-right">+400</div>
-                              <span data-localize="sidebar.nav.element.FONT_ICON">Font Icons</span>
-                           </a>
-                        </li>
-                        <li class=" ">
-                           <a href="icons-weather.html" title="Weather Icons">
-                              <em></em>
-                              <div class="label label-success pull-right">+100</div>
-                              <span data-localize="sidebar.nav.element.WEATHER_ICON">Weather Icons</span>
-                           </a>
-                        </li>
-                        <li class=" ">
-                           <a href="colors.html" title="Colors">
-                              <em></em>
-                              <span data-localize="sidebar.nav.element.COLOR">Colors</span>
-                           </a>
-                        </li>
-                     </ul>
-                  </li>
+                  
                   <li class=" ">
                      <a href="#forms" title="Forms" data-toggle="collapse">
                         <em class="icon-note"></em>
@@ -984,8 +869,8 @@
                            <em class="icon-cloud-upload fa-3x"></em>
                         </div>
                         <div class="col-xs-8 pv-lg">
-                           <div class="h2 mt0">1700</div>
-                           <div class="text-uppercase">Uploads</div>
+                           <div class="h2 mt0">{{income}}</div>
+                           <div class="text-uppercase">Income</div><small>GB</small>
                         </div>
                      </div>
                   </div>
@@ -998,48 +883,15 @@
                            <em class="icon-globe fa-3x"></em>
                         </div>
                         <div class="col-xs-8 pv-lg">
-                           <div class="h2 mt0">700
+                           <div class="h2 mt0"> {{expense}}
                               <small>GB</small>
                            </div>
-                           <div class="text-uppercase">Quota</div>
+                           <div class="text-uppercase">Expenses</div>
                         </div>
                      </div>
                   </div>
                </div>
-               <div class="col-lg-3 col-md-6 col-sm-12">
-                  <!-- START widget-->
-                  <div class="panel widget bg-green">
-                     <div class="row row-table">
-                        <div class="col-xs-4 text-center bg-green-dark pv-lg">
-                           <em class="icon-bubbles fa-3x"></em>
-                        </div>
-                        <div class="col-xs-8 pv-lg">
-                           <div class="h2 mt0">500</div>
-                           <div class="text-uppercase">Reviews</div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-3 col-md-6 col-sm-12">
-                  <!-- START date widget-->
-                  <div class="panel widget">
-                     <div class="row row-table">
-                        <div class="col-xs-4 text-center bg-green pv-lg">
-                           <!-- See formats: https://docs.angularjs.org/api/ng/filter/date-->
-                           <div data-now="" data-format="MMMM" class="text-sm"></div>
-                           <br>
-                           <div data-now="" data-format="D" class="h2 mt0"></div>
-                        </div>
-                        <div class="col-xs-8 pv-lg">
-                           <div data-now="" data-format="dddd" class="text-uppercase"></div>
-                           <br>
-                           <div data-now="" data-format="h:mm" class="h2 mt0"></div>
-                           <div data-now="" data-format="a" class="text-muted text-sm"></div>
-                        </div>
-                     </div>
-                  </div>
-                  <!-- END date widget    -->
-               </div>
+               
             </div>
             <!-- END widgets box-->
             <div class="row">
