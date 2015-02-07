@@ -1,13 +1,15 @@
 import pandas
 
+
 class IReader(object):
-    
+
     HEADER = ['DATE', 'DESCRIPTION', 'AMOUNT', 'IS_EXPENSE']
-    
+
     def get(self):
         pass
 
-class CsvReader(IReader): 
+
+class CsvReader(IReader):
 
     INPUT_HEADER = ['DATE', 'DESCRIPTION', 'AMOUNT']
 
@@ -24,8 +26,8 @@ class CsvReader(IReader):
             else:
                 is_expense = False
 
-            self.data_frame.loc[index,'IS_EXPENSE']= is_expense
-            self.data_frame.loc[index,'AMOUNT']= abs(row['AMOUNT']) 
+            self.data_frame.loc[index, 'IS_EXPENSE'] = is_expense
+            self.data_frame.loc[index, 'AMOUNT'] = abs(row['AMOUNT'])
 
     def get(self):
-        return self.data_frame 
+        return self.data_frame

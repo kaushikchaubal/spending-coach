@@ -1,17 +1,20 @@
 class IRule(object):
 
-    def __init__(self, statement_type):
-        self.statement_type = statement_type
+    def __init__(self, category):
+        self.category = category
 
     def check_rule(self, description):
         pass
 
 
-class KeywordRule(object):
+class KeywordRule(IRule):
 
-    def __init__(self, statement_type, keyword):
-        super(KeywordRule, self).__init__(statement_type)
-        self.keyword = keyword
+    def __init__(self, category, keywords):
+        super(KeywordRule, self).__init__(category)
+        self.keywords = keywords
 
     def check_rule(self, description):
-        return description.find(self.keyword) != -1
+        for keyword in self.keywords:
+            if description.lower().find(keyword.lower()) != -1:
+                return True
+        return False
